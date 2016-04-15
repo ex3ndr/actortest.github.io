@@ -15,5 +15,13 @@
   </div>
 
   <script src="/app.js"></script>
+  <script>
+    var isChrome = window.chrome && /Google/.test(navigator.vendor) && !/OPR|Edge/.test(navigator.userAgent);
+    if (isChrome) {
+      window.addEventListener('unload', function () {
+        document.documentElement.innerHTML = '';
+      });
+    }
+  </script>
 </body>
 </html>
